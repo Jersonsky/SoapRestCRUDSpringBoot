@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.baeldung.com/springsoap"
+	xmlns:tns="http://www.baeldung.com/springsoap"
+	elementFormDefault="qualified">
+	
+	<element name="getClienteByIdRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getClienteByIdResponse">
+        <complexType>
+            <sequence>
+                <element name="cliente" type="tns:cliente"/>
+            </sequence>
+        </complexType>
+    </element>
+    
+    
+		
+	<element name="saveClientRequest">
+        <complexType>
+            <sequence>
+                <element name="cliente" type="tns:cliente"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="saveClientResponse">
+        <complexType>
+            <sequence>
+                <element name="estado" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    
+    <element name="updateClientRequest">
+        <complexType>
+            <sequence>
+               <element name="cliente" type="tns:cliente"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateClientResponse">
+        <complexType>
+            <sequence>
+                <element name="serviceStatus" type="tns:serviceStatus"/>
+            </sequence>
+        </complexType>
+    </element>
+    
+    <element name="deleteClientRequest">
+        <complexType>
+            <sequence>
+               <element name="id" type="int"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteClientResponse">
+        <complexType>
+            <sequence>
+                <element name="serviceStatus" type="tns:serviceStatus"/>
+            </sequence>
+        </complexType>
+    </element>
+    
+     <complexType name="serviceStatus">
+        <sequence>
+            <element name="statusCode" type="string"/>
+            <element name="message" type="string"/>
+        </sequence>
+    </complexType> 
+	
+    <complexType name="cliente">
+        <sequence>
+        	<element name="id" type="int"/>
+            <element name="cedula" type="string"/>
+            <element name="nombre" type="string"/>
+            <element name="apellido" type="string"/>
+            <element name="telefono" type="string"/>
+            <element name="correo" type="string"/>
+        </sequence>
+    </complexType>
+</schema>
